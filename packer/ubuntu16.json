@@ -1,0 +1,32 @@
+{
+  "builders": [
+    {
+      "type": "googlecompute",
+      "project_id": "null",
+      "image_name": "reddit-base-{{timestamp}}",
+      "source_image": "null",
+      "zone": "europe-west1-c",
+      "ssh_username": "appuser",
+      "machine_type": "",
+      "image_description": "Image with ruby and mongodb",
+      "disk_size": "10",
+      "disk_type": "pd-standard",
+      "network": "default",
+      "tags": [
+        "ruby",
+        "mongodb"
+        ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "scripts/install_ruby.sh"
+    },
+    {
+      "type": "shell",
+      "script": "scripts/install_mongodb.sh",
+      "execute_command": "sudo {{.Path}}"
+    }
+  ]
+}
