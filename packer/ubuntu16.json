@@ -2,12 +2,20 @@
   "builders": [
     {
       "type": "googlecompute",
-      "project_id": "silver-tape-178310",
+      "project_id": "null",
       "image_name": "reddit-base-{{timestamp}}",
-      "source_image": "ubuntu-1604-xenial-v20170815a",
+      "source_image": "null",
       "zone": "europe-west1-c",
       "ssh_username": "appuser",
-      "machine_type": "f1-micro"
+      "machine_type": "",
+      "image_description": "Image with ruby and mongodb",
+      "disk_size": "10",
+      "disk_type": "pd-standard",
+      "network": "default",
+      "tags": [
+        "ruby",
+        "mongodb"
+        ]
     }
   ],
   "provisioners": [
