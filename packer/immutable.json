@@ -1,0 +1,13 @@
+{
+  "builders": [
+    {
+      "type": "googlecompute",
+      "project_id": "silver-tape-178310",
+      "image_name": "reddit-base-sher-{{timestamp}}",
+      "source_image": "reddit-image-sher",
+      "zone": "europe-west1-c",
+      "ssh_username": "appuser",
+      "machine_type": "f1-micro"
+    }
+  ]
+}
