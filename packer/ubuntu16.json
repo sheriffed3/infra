@@ -1,13 +1,18 @@
 {
+  "variables": {
+    "project_id": "null",
+    "source_image": "null",
+    "machine_type": ""
+  },
   "builders": [
     {
       "type": "googlecompute",
-      "project_id": "null",
+      "project_id": "{{user `project_id`}}",
       "image_name": "reddit-base-{{timestamp}}",
-      "source_image": "null",
+      "source_image": "{{user `source_image`}}",
       "zone": "europe-west1-c",
       "ssh_username": "appuser",
-      "machine_type": "",
+      "machine_type": "{{user `machine_type`}}",
       "image_description": "Image with ruby and mongodb",
       "disk_size": "10",
       "disk_type": "pd-standard",
