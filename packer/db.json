@@ -1,0 +1,32 @@
+{
+  "variables": {
+    "project_id": "terraproject-179615",
+    "source_image": "ubuntu-1604-xenial-v20170815a",
+    "machine_type": "f1-micro"
+  },
+  "builders": [
+    {
+      "type": "googlecompute",
+      "project_id": "{{user `project_id`}}",
+      "image_name": "reddit-db-base",
+      "source_image": "{{user `source_image`}}",
+      "zone": "europe-west1-c",
+      "ssh_username": "appuser",
+      "machine_type": "{{user `machine_type`}}",
+      "image_description": "Image with mongodb",
+      "disk_size": "10",
+      "disk_type": "pd-standard",
+      "network": "default",
+      "tags": [
+        "mongodb"
+        ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "scripts/install_mongodb.sh",
+      "execute_command": "sudo {{.Path}}"
+    }
+  ]
+}
