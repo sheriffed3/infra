@@ -24,9 +24,8 @@
   ],
   "provisioners": [
     {
-      "type": "shell",
-      "script": "scripts/install_mongodb.sh",
-      "execute_command": "sudo {{.Path}}"
+      "type": "ansible",
+      "playbook_file": "/home/sher/OTUS/infra/branches/terraform-2/ansible/packer_db.yml"
     }
   ]
 }
