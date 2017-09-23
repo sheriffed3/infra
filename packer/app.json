@@ -24,8 +24,8 @@
   ],
   "provisioners": [
     {
-      "type": "ansible",
-      "playbook_file": "/home/sher/OTUS/infra/branches/terraform-2/ansible/packer_app.yml"
+      "type": "shell",
+      "script": "scripts/install_ruby.sh"
     }
   ]
 }
