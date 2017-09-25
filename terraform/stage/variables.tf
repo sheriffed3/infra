@@ -13,10 +13,6 @@ variable public_key_path {
   default = "~/.ssh/appuser.pub"
 }
 
-variable disk_image {
-  description = "Disk image"
-}
-
 variable privat_key_path {
   description = "Path to the private key used for scripts"
   default = "~/.ssh/appuser"
