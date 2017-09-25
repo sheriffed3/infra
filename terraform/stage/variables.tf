@@ -1,5 +1,6 @@
 variable project {
   description = "Project ID"
+ default = "terraproject-179615"
 }
 
 variable region {
@@ -9,6 +10,7 @@ variable region {
 
 variable public_key_path {
   description = "Path to the public key used for ssh access"
+  default = "~/.ssh/appuser.pub"
 }
 
 variable disk_image {
@@ -17,6 +19,7 @@ variable disk_image {
 
 variable privat_key_path {
   description = "Path to the private key used for scripts"
+  default = "~/.ssh/appuser"
 }
 
 variable app_disk_image {
