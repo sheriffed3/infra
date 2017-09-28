@@ -1,0 +1,10 @@
+# {{ ansible_managed }}
+upstream reddit {
+  server 127.0.0.1;
+}
+server {
+  server_name {{ item.value.server_name }};
+  location / {
+    proxy_pass http://reddit:9292;
+  }
+}

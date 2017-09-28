@@ -1,3 +1,5 @@
+#Look terraform.tfvars.example
+
 variable project {
   description = "Project ID"
 }
@@ -9,10 +11,6 @@ variable region {
 
 variable public_key_path {
   description = "Path to the public key used for ssh access"
-}
-
-variable disk_image {
-  description = "Disk image"
 }
 
 variable privat_key_path {
