@@ -1,19 +1,14 @@
 # Setup and configure ruby things for reddit app
-- name: "Reddit App: Configure app environment"
-  hosts: all
-  gather_facts: no
-  become: yes
+- name: Configure App
+  hosts: app
+  gather_facts: false
+  become: true
+  
 
-  tasks:
-  - name: Install ruby and rubygems and required packages
-    apt: "name={{ item }} state=present"
-    with_items:
-      - ruby-full
-      - ruby-dev
-      - build-essential
+  pre_tasks:
+    - name: Install python for Ansible
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+      changed_when: false
 
-  - name: Install Ruby bundler
-    gem:
-      name: bundler
-      state: present
-      user_install: no
+  roles:
+    - app

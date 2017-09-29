@@ -2,7 +2,7 @@
   hosts: app
   gather_facts: false
   become: true
-  
+
   pre_tasks:
     - name: Install python for Ansible
       raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
@@ -10,11 +10,11 @@
 
   roles:
     - app
-    - role: nginx
-      nginx_sites:
-        custom_bar:
-          template: custom_bar.conf.j2
-          server_name: _
-          upstream_name: reddit
-          server_upstream: 127.0.0.1:9292
-          listen_port: 80
+#    - role: nginx
+#      nginx_sites:
+#        custom_bar:
+#          template: custom_bar.conf.j2
+#          server_name: _
+#          upstream_name: reddit
+#          server_upstream: 127.0.0.1:9292
+#          listen_port: 80
