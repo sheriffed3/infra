@@ -19,5 +19,6 @@ def test_config_file(File):
     assert config_file.is_file
 
 # check port 27017 is listening
-def test_listening_port_27017(Socket):
-    ("tcp://0.0.0.0:27017")
+def test_listening_port_27017(host):
+    mongo_port = host.socket("tcp://0.0.0.0:27017")
+    assert mongo_port.is_listening

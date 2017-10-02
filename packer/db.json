@@ -25,6 +25,9 @@
   "provisioners": [
     {
       "type": "ansible",
+      "extra_arguments": [
+        "--tags=install"
+        ],
       "playbook_file": "../ansible/db.yml"
     }
   ]

@@ -25,6 +25,9 @@
   "provisioners": [
     {
       "type": "ansible",
+      "extra_arguments": [
+        "--tags=ruby"
+      ],
       "playbook_file": "../ansible/app.yml"
     }
   ]
