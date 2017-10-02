@@ -4,4 +4,3 @@
 *.tfvars
 .terraform/
 *.retry
-.vagrant/
