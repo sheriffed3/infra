@@ -4,3 +4,5 @@
 *.tfvars
 .terraform/
 *.retry
+.molecule
+.vagrant/
